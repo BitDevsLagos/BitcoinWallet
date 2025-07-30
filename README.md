@@ -82,8 +82,6 @@ Each language branch should include:
 
 README.md with setup instructions
 
-A wallet/ directory with core functionality
-
 Tests (unit/integration)
 
 CLI or UI interface (optional)
