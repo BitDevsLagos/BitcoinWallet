@@ -3,4 +3,9 @@ name = "BitcoinWallet"
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[workspace]
+members = [
+    "wallet_core",
+    "cli",
+    "gui",
+]
