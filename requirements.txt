@@ -1,0 +1,6 @@
+# Core Dependencies
+requests
+bitcoinlib
+
+# Testing
+pytest
