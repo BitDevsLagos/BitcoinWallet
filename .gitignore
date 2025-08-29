@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+.pytest_cache/
 *.pyc
 *.pyo
 *.pyd
@@ -16,3 +17,5 @@ pip-selfcheck.json
 
 # OS
 .DS_Store
+
+MEMORY.md
