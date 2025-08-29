@@ -2,7 +2,6 @@
 
 A Rust implementation of a modern, lightweight Bitcoin wallet, built for the `BitDevsLagos/BitcoinWallet` educational project.
 
-[![MIT/Apache-2.0 licensed](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](./LICENSE-APACHE)
 [![CI Status](https://img.shields.io/badge/CI-Pending-yellow.svg)](#)
 [![Rustc Version](https://img.shields.io/badge/rustc-1.70%2B-orange.svg)](#)
 
