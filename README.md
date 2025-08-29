@@ -71,23 +71,12 @@ We welcome and encourage contributions! Here’s how you can help:
 5.  Commit your work and push it to your fork.
 6.  Open a Pull Request against the `Rust-BitcoinWallet` branch of the main `BitDevsLagos/BitcoinWallet` repository.
 
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual-licensed as above, without any additional terms or conditions.
 
 ### Project Directory Structure
-
-
-
-Of course. Here is a well-structured `README.md` that explains your project structure. This is designed to be placed inside the `rust` branch of the main repository to guide other Rust developers.
-
----
-
-# Rust Implementation of BitcoinWallet
 
 This directory contains the Rust implementation of the BitcoinWallet project, structured as a **Cargo Workspace** to ensure a clean separation between core logic and user interfaces.
 
 This approach allows us to build and maintain the critical wallet functionality independently from how the user interacts with it (be it a command-line tool or a graphical interface).
-
-## 🏛️ Project Structure
 
 This project is organized into three distinct crates: `wallet_core`, `cli`, and `gui`.
 
