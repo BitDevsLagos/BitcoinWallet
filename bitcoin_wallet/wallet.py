@@ -11,7 +11,7 @@ class BitcoinWallet:
     any data on the filesystem.
     """
 
-    def __init__(self, mnemonic=None, network='testnet'):
+    def __init__(self, mnemonic=None, network='bitcoin'):
         """
         Initializes the wallet from a mnemonic phrase.
 
@@ -66,13 +66,24 @@ class BitcoinWallet:
         """
         return self.master_key.public_hex
 
+    def get_address(self):
+        """
+        Returns the a bitcoin address9Defaults to bech32 format.
+
+        Returns:
+            str: The bech32 address (starts with "bc1" for mainnet and "tb1" for testnet).
+        """
+        return self.master_key.address()
+
+    
+
 
 if __name__ == '__main__':
     print("--- Simple Wallet Generation Example ---")
 
     # Example 1: Create a wallet with a newly generated mnemonic
     print("\n1. Creating a new wallet...")
-    new_wallet = BitcoinWallet(network='testnet')
+    new_wallet = BitcoinWallet(network='bitcoin')
 
     mnemonic = new_wallet.get_mnemonic()
     private_key_wif = new_wallet.get_master_private_key()
@@ -93,3 +104,8 @@ if __name__ == '__main__':
     print(f"   Mnemonic: {existing_wallet.get_mnemonic()}")
     print(f"   Master Private Key (WIF): {loaded_private_key}")
     print(f"   Master Public Key (Hex): {loaded_public_key}")
+
+    # Example 3: Generate Bech32 address
+    print("\n3. Generating a Bech32 wallet address from an existing mnemonic...")
+    bech32_address = new_wallet.get_address()
+    print(f"    Address: {bech32_address}")

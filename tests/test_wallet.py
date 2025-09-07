@@ -55,3 +55,13 @@ class TestBitcoinWallet:
         # It's astronomically unlikely, but check just in case of a bad random source
         assert wallet1.get_mnemonic() != wallet2.get_mnemonic()
         assert wallet1.get_master_private_key() != wallet2.get_master_private_key()
+
+    def test_bech32_address_format(self):
+        """
+        Test that get_bech32_address returns a valid testnet Bech32 address (starts with 'tb1').
+        """
+        wallet = BitcoinWallet(network='bitcoin')
+        addr = wallet.get_address()
+        assert isinstance(addr, str)
+        assert addr.startswith('bc1')
+        assert len(addr) > 10  # Bech32 addresses are longer
