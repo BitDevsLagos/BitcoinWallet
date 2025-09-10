@@ -1,5 +1,6 @@
 from bitcoinlib.keys import HDKey
 from bitcoinlib.mnemonic import Mnemonic
+import qrcode
 
 
 class BitcoinWallet:
@@ -74,8 +75,32 @@ class BitcoinWallet:
             str: The bech32 address (starts with "bc1" for mainnet and "tb1" for testnet).
         """
         return self.master_key.address()
-
     
+    def generate_qr_code(self, filename=None):
+        """
+        Generate a PNG QR code for the bech32 address.
+
+        Args:
+            file_name (str, optional): Filename (with .png) to save the QR code.
+                                    Defaults to '<address>.png' in cwd.
+        Returns:
+            str: Path to the saved QR code image.
+        """
+        address = self.get_address()
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(address)
+        qr.make(fit=True)
+
+        img = qr.make_image(fill_color="black", back_color="white")
+        if not filename:
+            filename = f"{address}.png"
+        img.save(filename)
+        return filename
 
 
 if __name__ == '__main__':
@@ -109,3 +134,8 @@ if __name__ == '__main__':
     print("\n3. Generating a Bech32 wallet address from an existing mnemonic...")
     bech32_address = new_wallet.get_address()
     print(f"    Address: {bech32_address}")
+
+    # Example 4: Generate QR code for the address
+    print("\n4. Generating a QR code for the Bech32 address...")
+    qr_path = existing_wallet.generate_qr_code()
+    print(f"    QR code saved to: {qr_path}")
