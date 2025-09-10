@@ -4,3 +4,4 @@ bitcoinlib
 
 # Testing
 pytest
+pyzbar

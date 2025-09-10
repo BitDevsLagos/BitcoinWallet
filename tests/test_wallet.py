@@ -1,4 +1,6 @@
 import pytest
+from pyzbar.pyzbar import decode
+from PIL import Image
 from bitcoin_wallet.wallet import BitcoinWallet
 
 
@@ -65,3 +67,27 @@ class TestBitcoinWallet:
         assert isinstance(addr, str)
         assert addr.startswith('bc1')
         assert len(addr) > 10  # Bech32 addresses are longer
+
+    def test_qr_address_generation(self):
+        """
+        Test that generate_qr_code creates a QR code file for the wallet address.
+        
+        Also verifies that the QR code encodes the correct address.
+        """
+        wallet = BitcoinWallet()
+        addr = wallet.get_address()
+        qr_path = wallet.generate_qr_code(filename='test_qr.png')
+        assert qr_path == 'test_qr.png'
+
+        # Decode the QR code to verify it encodes the correct address
+        decoded = decode(Image.open(qr_path))[0].data.decode()
+        assert decoded == addr
+
+        # Check that the file was created
+        import os
+        assert os.path.isfile(qr_path)
+
+        # Clean up the test QR code file
+        os.remove(qr_path)
+
+        
