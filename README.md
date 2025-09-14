@@ -1,110 +1,103 @@
-# BitcoinWallet - Rust Implementation
+# 🪙 BitcoinWallet
 
-A Rust implementation of a modern, lightweight Bitcoin wallet, built for the `BitDevsLagos/BitcoinWallet` educational project.
+**BitcoinWallet** is a multi-language, open-source project focused on building functional Bitcoin wallets in various programming languages. Each wallet supports core Bitcoin features like sending, receiving, managing balances, and transaction history.
 
-[![CI Status](https://img.shields.io/badge/CI-Pending-yellow.svg)](#)
-[![Rustc Version](https://img.shields.io/badge/rustc-1.70%2B-orange.svg)](#)
+## 🎯 Project Goal
 
-**Main Project:** [BitDevsLagos/BitcoinWallet](https://github.com/BitDevsLagos/BitcoinWallet)
+The goal of this repository is to help developers learn and implement Bitcoin wallet functionality in their preferred language — collaboratively or independently — while adhering to Bitcoin protocol standards.
+
+Each **branch** of this repository represents an implementation in a different **programming language**, allowing for:
+- Language-specific best practices
+- Cross-language collaboration and learning
+- Comparisons in architecture and performance
+- Community contributions in familiar ecosystems
 
 ---
 
-### About
+## 🗂️ Branch Structure
 
-The `BitcoinWallet-Rust` library aims to provide a well-engineered Bitcoin wallet Library in Rust. Our goal is to create a learning resource that adheres to Bitcoin protocol standards and Rust best practices.
+| Branch        | Language     | Status        | Maintainers        |
+|---------------|--------------|---------------|--------------------|
+| `main`        | Meta/Docs    | ✅ Active      | Core team          |
+| `python`      | Python       | 🛠 In Progress | @alice, @bob       |
+| `javascript`  | JavaScript   | 🛠 In Progress | @carol             |
+| `rust`        | Rust         | 🧪 Experimental| @dave              |
+| `go`          | Go           | 🛠 In Progress | Open for volunteers|
+| `java`        | Java         | 🔲 Planned     | TBD                |
+
+> 💡 Want to start a new branch in your language? [Open an issue](https://github.com/BitDevsLagos/BitcoinWallet/issues) or fork the repo and submit a PR to create a new branch.
+
+---
+
+## 💼 Core Features to Implement
+
+Each language implementation should aim to support:
+
+- ✅ **Wallet Generation**
+  - BIP32/BIP39/BIP44
+  - Private/Public Key pairs
+  - Mnemonic phrase support
+
+- ✅ **Address Management**
+  - Generate P2PKH (and optionally Bech32) addresses
+  - QR code generation for receive addresses
+
+- ✅ **Balance Checking**
+  - Via APIs like Blockstream, BlockCypher, or Electrum servers
+
+- ✅ **Send Bitcoin**
+  - Build and broadcast raw transactions
+  - Fee estimation and change address handling
+
+- ✅ **Receive Bitcoin**
+  - Display wallet address
+  - Monitor incoming transactions
+
+- ✅ **Transaction History**
+  - Fetch and display past transactions
+
+- ✅ **Backup & Restore**
+  - Encrypted storage
+  - Mnemonic/Private key export/import
+
+- ✅ **Security Best Practices**
+  - Key encryption
+  - Secure storage
+  - No private keys sent to external APIs
+
+---
+
+## 🤝 Contributing
+We welcome contributors in all languages! Here's how to get started:
+
+Check out an existing language branch (e.g. python, rust, go)
+
+Or propose a new one (e.g. csharp, kotlin, swift)
+
+Follow the contribution guidelines in that branch
+
+Submit PRs to the appropriate branch only
+
+Each language branch should include:
+
+README.md with setup instructions
+
+Tests (unit/integration)
+
+CLI or UI interface (optional)
+
+📢 We encourage reusable architecture across implementations, but each branch is free to adapt based on the language's strengths and idioms.
+
+## 🛡️ Security Notes
+This project is intended for educational and experimental purposes. Do not use it for real funds unless you thoroughly audit the code and understand Bitcoin security principles.
+
+Never expose your private keys or mnemonic phrases.
+
+Use testnet/signet for development and testing.
+
+Encrypt and store sensitive data securely.
 
 
-### Core Features Roadmap
+## 🔗 Connect with Us
 
-The following is a list of core features to be implemented, as outlined by the main project goals.
-
-*   [ ] **Wallet Generation**
-    *   [ ] BIP39 Mnemonic Phrase Support
-    *   [ ] BIP32 Root Key Derivation
-    *   [ ] BIP44/84/86 Path Derivation
-*   [ ] **Address Management**
-    *   [ ] Generate P2PKH, P2WPKH (Bech32) & P2TR (Taproot) addresses
-    *   [ ] QR code generation for receive addresses
-*   [ ] **Balance Checking**
-    *   [ ] Sync wallet state from a blockchain source
-*   [  **Send Bitcoin**
-    *   [ ]] Coin selection and fee estimation
-    *   [ ] Build, sign, and broadcast raw transactions
-*   [  **Receive Bitcoin**
-    *   [ ]] Display wallet address
-    *   [ ] Monitor incoming transactions
-*   [ ] **Transaction History**
-    *   [ ] Fetch and display past transactions
-*   [ ] **Backup & Restore**
-    *   [ ] Encrypted wallet file storage
-    *   [ ] Restore wallet from mnemonic phrase
-
-### Minimum Supported Rust Version (MSRV)
-
-This project aims to maintain a **Minimum Supported Rust Version (MSRV)** of `1.70.0`. We will not guarantee that the project compiles on older Rust versions.
-
-### Development
-
-This project uses standard Rust tooling.
-
-*   To build the crate:
-    ```bash
-    cargo build
-    ```
-*   To run all tests:
-    ```bash
-    cargo test
-    ```
-*   To format the code:
-    ```bash
-    cargo fmt
-    ```
-
-### Contribution
-
-We welcome and encourage contributions! Here’s how you can help:
-
-1.  Fork the repository and clone it locally.
-2.  Check out the `Rust-BitcoinWallet` branch: `git checkout Rust-BitcoinWallet`.
-3.  Create a new feature branch for your work: `git checkout -b your-feature-name`.
-4.  Make your changes. Please add unit tests for new functionality.
-5.  Commit your work and push it to your fork.
-6.  Open a Pull Request against the `Rust-BitcoinWallet` branch of the main `BitDevsLagos/BitcoinWallet` repository.
-
-
-### Project Directory Structure
-
-This directory contains the Rust implementation of the BitcoinWallet project, structured as a **Cargo Workspace** to ensure a clean separation between core logic and user interfaces.
-
-This approach allows us to build and maintain the critical wallet functionality independently from how the user interacts with it (be it a command-line tool or a graphical interface).
-
-This project is organized into three distinct crates: `wallet_core`, `cli`, and `gui`.
-
-```
-.
-├── Cargo.lock
-├── Cargo.toml
-├── README.md
-├── cli/
-│   ├── Cargo.toml
-│   └── src/
-│       └── main.rs
-├── gui/
-│   ├── Cargo.toml
-│   └── src/
-│       └── main.rs
-├── src/
-│   └── lib.rs
-└── wallet_core/
-    ├── Cargo.toml
-    └── src/
-        └── lib.rs
-```
-
-### 🛡️ Security Notes
-
-This project is for **educational and experimental purposes only**. Do not use wallets generated by this software for real funds unless you have thoroughly audited the code and understand the risks involved.
-
-*   **Never expose your private keys or mnemonic phrases.**
-*   Use `testnet` or `signet` for all development and testing.
-*   Always encrypt and store sensitive data securely.
+Twitter: @BitDevsLagos
