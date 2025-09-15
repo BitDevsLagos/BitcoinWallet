@@ -101,5 +101,3 @@ Encrypt and store sensitive data securely.
 ## 🔗 Connect with Us
 
 Twitter: @BitDevsLagos
-
-
