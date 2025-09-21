@@ -71,7 +71,7 @@ class TestBitcoinWallet:
     def test_qr_address_generation(self):
         """
         Test that generate_qr_code creates a QR code file for the wallet address.
-        
+
         Also verifies that the QR code encodes the correct address.
         """
         wallet = BitcoinWallet()
@@ -89,5 +89,17 @@ class TestBitcoinWallet:
 
         # Clean up the test QR code file
         os.remove(qr_path)
+
+    def test_get_balance(self):
+        """
+        Test that get_balance returns an integer >= 0 for a valid address.
+
+        Note: This is an integration test and requires internet access.
+        The balance for a new wallet is expected to be 0.
+        """
+        wallet = BitcoinWallet(network='testnet')
+        balance = wallet.get_balance()
+        assert isinstance(balance, int)
+        assert balance >= 0
 
         
