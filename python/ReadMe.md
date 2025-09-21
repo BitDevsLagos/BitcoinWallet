@@ -36,4 +36,9 @@ This is the Python implementation of the BitcoinWallet project.
 
 (Instructions to be added)
 
+## ✅ Running Tests
 
+To run the tests, execute:
+```bash
+pytest
+```
