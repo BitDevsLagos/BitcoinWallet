@@ -1,7 +1,7 @@
 import pytest
 from pyzbar.pyzbar import decode
 from PIL import Image
-from bitcoin_wallet.wallet import BitcoinWallet
+from python.bitcoin_wallet.core.wallet import BitcoinWallet
 
 
 class TestBitcoinWallet:
