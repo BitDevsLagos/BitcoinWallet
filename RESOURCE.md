@@ -13,12 +13,22 @@ A curated collection of resources for contributors building Bitcoin-related proj
 
 ## 💻 Development Resources
 
+### Python Development
+- **[Programming Bitcoin (Jimmy Song)](https://github.com/jimmysong/programmingbitcoin)** - Comprehensive Python-based Bitcoin development resource covering everything from basic cryptography to advanced Bitcoin protocols
+- **[Programming Bitcoin Book](https://programmingbitcoin.com/)** - The companion book to Jimmy Song's repository, excellent for understanding Bitcoin internals
+
 ### JavaScript Development
 - **[bitcore-lib](https://www.npmjs.com/package/bitcore-lib)** - JavaScript library for Bitcoin wallet development
 - **[Bitcore Tutorial Video](https://www.youtube.com/watch?v=ObRnmvIdecI)** - Getting started tutorial for the bitcore-lib library
 
 ### C# Development
 - **[Programming Blockchain with C#](https://programmingblockchain.gitbook.io/programmingblockchain/)** - One of the best C# resources for Bitcoin development
+
+### Rust Development
+- **[Introduction to Rust for Bitcoin Development](https://btcdemy.thinkific.com/courses/intro-to-rust)** - Learn Rust specifically for Bitcoin development
+- **[Bitcoin Development Kit (BDK) - Book of BDK](https://bookofbdk.com/)** - Comprehensive guide for building Bitcoin wallets and applications using BDK in Rust
+- **[Lightning Development Kit (LDK)](https://lightningdevkit.org/)** - Build Lightning Network applications with Rust using LDK
+- **[PayJoin Development Kit](https://payjoindevkit.org/introduction/)** - Privacy-focused Bitcoin transaction toolkit for implementing PayJoin protocols
 
 ### Practical Examples
 - **[Bitcoin Wallet Implementation by Kevin](https://www.youtube.com/watch?v=Bwz2P2hPVpk&t=51s&pp=ygUyYml0Y29pbiBjb25mZXJlbmNlIGJ1aWxkIGEgd2FsbGV0IGFwcCBiaXRjb2luIDIwMjE%3D)** - Real-world Bitcoin wallet implementation walkthrough
@@ -58,12 +68,33 @@ For comprehensive learning and reference:
 2. **Download wallets**: Try at least 2-3 wallets from the list above
 3. **Practice transactions**: Send and receive small amounts (sats)
 4. **Study implementations**: Watch Kevin's wallet tutorial
-5. **Choose your stack**: Pick JavaScript (bitcore-lib) or C# resources
+5. **Choose your stack**: 
+   - **Python**: Jimmy Song's Programming Bitcoin resources
+   - **JavaScript**: bitcore-lib
+   - **C#**: Programming Blockchain resources
+   - **Rust**: BDK, LDK, or PayJoin development kits
 
 ### For Active Development
 - Refer to the technical books for implementation details
 - Test your builds against existing wallet behaviors
 - Study command-line interactions for deeper Bitcoin protocol understanding
+- **Rust developers**: Start with the BDK Book for wallet development or LDK for Lightning applications
+- **Privacy-focused projects**: Explore PayJoin Development Kit for enhanced transaction privacy
+
+## 🔧 Development Kit Recommendations by Use Case
+
+### Building Bitcoin Wallets
+- **Rust**: Bitcoin Development Kit (BDK) - Modern, well-documented
+- **Python**: Jimmy Song's Programming Bitcoin - Educational and practical
+- **JavaScript**: bitcore-lib - Mature library with good ecosystem
+
+### Lightning Network Development
+- **Rust**: Lightning Development Kit (LDK) - Production-ready Lightning implementation
+- **General**: Study Mastering the Lightning Network book first
+
+### Privacy-Enhanced Transactions
+- **Rust**: PayJoin Development Kit - Implement PayJoin for transaction privacy
+- **Research**: Study privacy techniques in Mastering Bitcoin
 
 ## 🤝 Contributing to This Resource List
 
@@ -81,3 +112,5 @@ Found a helpful resource? Add it via PR to this file!
 - 📱 Example wallets and applications
 - 📖 Books and documentation
 - 🔧 Testing and development tools
+- ⚡ Lightning Network specific resources
+- 🔒 Privacy and security tools
