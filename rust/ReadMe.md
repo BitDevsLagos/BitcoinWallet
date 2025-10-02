@@ -2,21 +2,16 @@
 
 A Rust implementation of a modern, lightweight Bitcoin wallet, built for the `BitDevsLagos/BitcoinWallet` educational project.
 
-[![CI Status](https://img.shields.io/badge/CI-Pending-yellow.svg)](#)
-[![Rustc Version](https://img.shields.io/badge/rustc-1.70%2B-orange.svg)](#)
-
-**Main Project:** [BitDevsLagos/BitcoinWallet](https://github.com/BitDevsLagos/BitcoinWallet)
-
 ---
 
 ### About
 
-The `BitcoinWallet-Rust` library aims to provide a well-engineered Bitcoin wallet Library in Rust. Our goal is to create a learning resource that adheres to Bitcoin protocol standards and Rust best practices.
+The rust `BitcoinWallet` aims to provide a Bitcoin wallet in Rust. Our goal is to create a BitcoinWallet using the Rust programming language while adhering to protocol standards and Rust best practices.
 
 
 ### Core Features Roadmap
 
-The following is a list of core features to be implemented, as outlined by the main project goals.
+The following is a list of core features to be implemented, as outlined by the project goals.
 
 *   [ ] **Wallet Generation**
     *   [ ] BIP39 Mnemonic Phrase Support
@@ -65,11 +60,10 @@ This project uses standard Rust tooling.
 We welcome and encourage contributions! Here’s how you can help:
 
 1.  Fork the repository and clone it locally.
-2.  Check out the `Rust-BitcoinWallet` branch: `git checkout Rust-BitcoinWallet`.
 3.  Create a new feature branch for your work: `git checkout -b your-feature-name`.
 4.  Make your changes. Please add unit tests for new functionality.
 5.  Commit your work and push it to your fork.
-6.  Open a Pull Request against the `Rust-BitcoinWallet` branch of the main `BitDevsLagos/BitcoinWallet` repository.
+6.  Open a Pull Request against the `main` branch of the main `BitDevsLagos/BitcoinWallet` repository.
 
 
 ### Project Directory Structure
